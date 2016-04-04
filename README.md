@@ -1,28 +1,32 @@
 # fluent-plugin-low-data-parser
-Fluent source parser plugin for parsing kye/value fileds in Low Data.
+- - -
+######Fluent source parser plugin for parsing kye/value fileds in Low Data.
+######This plugin support to change from LowData to JSON.
 
 # Installation
+```
 Use RubyGems:
  not support yet.(comming)
- 
-# Configuration
+```
 
+# Configuration
+######examaple. Input source.
 <pre>
-<code>
-<source>
+&lt;source&gt;
   type tail
   format lowdata
   pType testParser
   pColumn time,test1,test2,test3,test4,test5,test6
   pPattern 14,2,4,4,4,2,4
   tag td.log.data
-</source>
-</code>
+&lt;/source&gt;
 </pre>
 
+
+
+######examaple. Output Match.
 <pre>
-<code>
-<match td.log.data>
+&lt;match td.log.data&gt;
   type tdlog
   endpoint xxxxx
   apikey xxxxx
@@ -30,28 +34,25 @@ Use RubyGems:
   buffer_type file
   buffer_path /path/path
   use_ssl true
-</match>
+&lt;/match&gt;
 </pre>
-</code>
 
 # Output
-input log
+
+######Original LowData Log.
 <pre>
- : 20160318094049 40 1208 0881 6427 14 6806
+ : 2016031809404940120808816427146806
 </pre>
-output
+
+######output
 <pre>
  : Key : value
-   time : 20160318094049
-   test1 : 40
-   test2 : 1208
-   test3 : 0881
-   test4 : 6427
-   test5 : 14
-   test6 : 6806
-   pType : testParser
+   {"time":"20160318094049"},
+   {"test1":"40"},
+   {"test2":"1208"},
+   {"test3":"0881"},
+   {"test4":"6427"},
+   {"test5":"14"},
+   {"test6":"6806"},
+   {"pType":"testParser"}
 </pre>
-
-
-
- 
