@@ -7,6 +7,8 @@ Use RubyGems:
  
 # Configuration
 
+<pre>
+<code>
 <source>
   type tail
   format lowdata
@@ -15,7 +17,11 @@ Use RubyGems:
   pPattern 14,2,4,4,4,2,4
   tag td.log.data
 </source>
+</code>
+</pre>
 
+<pre>
+<code>
 <match td.log.data>
   type tdlog
   endpoint xxxxx
@@ -25,13 +31,16 @@ Use RubyGems:
   buffer_path /path/path
   use_ssl true
 </match>
-
+</pre>
+</code>
 
 # Output
 input log
+<pre>
  : 20160318094049 40 1208 0881 6427 14 6806
-
-output 
+</pre>
+output
+<pre>
  : Key : value
    time : 20160318094049
    test1 : 40
@@ -41,7 +50,7 @@ output
    test5 : 14
    test6 : 6806
    pType : testParser
-
+</pre>
 
 
 
