@@ -1,5 +1,4 @@
 # fluent-plugin-low-data-parser
-- - -
 ######Fluent source parser plugin for parsing kye/value fileds in Low Data.
 ######This plugin support to change from LowData to JSON.
 
