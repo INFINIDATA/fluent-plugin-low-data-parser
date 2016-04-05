@@ -1,6 +1,6 @@
 module Fluent
   class TextParser
-    class FactoryKeyValueParse < Parser
+    class LowDataKeyValueParse < Parser
       Plugin.register_parser("LowDataParser", self);
 
       config_param :pType, :string, :default => "Low Data"
